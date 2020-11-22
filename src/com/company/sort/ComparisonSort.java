@@ -52,7 +52,6 @@ public class ComparisonSort<T> {
         this.swap(data, left, i);
         quckSort(data, comp, left, i - 1);
         quckSort(data, comp, i + 1, right);
-
     }
     public static void main(String[] args) {
         List<Integer> data = new ArrayList<>();
