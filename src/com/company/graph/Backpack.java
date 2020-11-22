@@ -12,7 +12,7 @@ public class Backpack {
      * @param value       物品价值
      * @return
      */
-    public Double zeroOneBackpack(Integer capacity, Integer num, Integer[] weight, Double[] value) {
+    public Double zeroOnePack(Integer capacity, Integer num, Integer[] weight, Double[] value) {
         Double[] sum = new Double[capacity + 1];
         for (int i = 0; i < capacity + 1; i++)
             sum[i] = 0d;
@@ -32,7 +32,7 @@ public class Backpack {
      * @param value       物品价值
      * @return
      */
-    public Double completeBackpack(Integer capacity, Integer num, Integer[] weight, Double[] value) {
+    public Double completePack(Integer capacity, Integer num, Integer[] weight, Double[] value) {
         Double[] sum = new Double[capacity + 1];
         for (int i = 0; i < capacity + 1; i++)
             sum[i] = 0d;
@@ -52,7 +52,7 @@ public class Backpack {
      * @param value       物品价值
      * @return
      */
-    public Double multipleBackpack(Integer capacity, Integer num, Integer[] singleNum, Integer[] weight, Double[] value) {
+    public Double multiplePack(Integer capacity, Integer num, Integer[] singleNum, Integer[] weight, Double[] value) {
         Double[] sum = new Double[capacity + 1];
         for (int i = 0; i < capacity + 1; i++)
             sum[i] = 0d;
@@ -75,7 +75,7 @@ public class Backpack {
      * @param value       物品价值
      * @return
      */
-    public Double towDimZeroOneBackpack(Integer capacity, Integer withinVolume, Integer num,
+    public Double towDimZeroOnePack(Integer capacity, Integer withinVolume, Integer num,
                                   Integer[] weight, Integer[] volume, Double[] value) {
         Double[][] sum = new Double[capacity + 1][withinVolume + 1];
         for (int i = 0; i < capacity + 1; i++)
@@ -95,6 +95,6 @@ public class Backpack {
         Integer volume[] = {4, 3, 4, 5, 3};
         Double value[] = {7d, 5d, 6d, 2d, 3d};
         Backpack backpack = new Backpack();
-        System.out.println(backpack.zeroOneBackpack(capacity, num, weight, value));
+        System.out.println(backpack.zeroOnePack(capacity, num, weight, value));
     }
 }
