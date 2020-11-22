@@ -12,10 +12,10 @@ public class Backpack {
      * @param value       物品价值
      * @return
      */
-    public Integer ZeroOneBackpack(Integer volume, Integer num, Integer[] weight, Integer[] value) {
-        Integer[] sum = new Integer[volume + 1];
+    public Double ZeroOneBackpack(Integer volume, Integer num, Integer[] weight, Double[] value) {
+        Double[] sum = new Double[volume + 1];
         for (int i = 0; i < volume + 1; i++)
-            sum[i] = 0;
+            sum[i] = 0d;
         for (int i = 0; i < num; i ++) {
             for (int j = volume; j >=weight[i]; j--) {
                 sum[j] = Math.max(sum[j], sum[j - weight[i]] + value[j]);
@@ -32,10 +32,10 @@ public class Backpack {
      * @param value       物品价值
      * @return
      */
-    public Integer completeBackpack(Integer volume, Integer num, Integer[] weight, Integer[] value) {
-        Integer[] sum = new Integer[volume + 1];
+    public Double completeBackpack(Integer volume, Integer num, Integer[] weight, Double[] value) {
+        Double[] sum = new Double[volume + 1];
         for (int i = 0; i < volume + 1; i++)
-            sum[i] = 0;
+            sum[i] = 0d;
         for (int i = 0; i < num; i ++) {
             for (int j = weight[i]; j <= volume; j--) {
                 sum[j] = Math.max(sum[j], sum[j - weight[i]] + value[j]);
