@@ -85,8 +85,30 @@ public class Backpack {
             for (int j = capacity; j >=weight[i]; j--)
                 for (int k = withinVolume; k >= volume[i]; k--)
                     sum[j][k] = Math.max(sum[j][k], sum[j - weight[i]][k - volume[i]] + value[i]);
-
         return sum[capacity][withinVolume];
+    }
+
+    /**
+     * 分组背包
+     * @param capacity    背包容量
+     * @param num         组数量
+     * @param weight      物品重量
+     * @param value       物品价值
+     * @return
+     */
+    public Double groupPack(Integer capacity, Integer num, Integer[][] weight, Double[][] value){
+        Double[] sum = new Double[capacity + 1];
+        for (int i = 0; i < capacity + 1; i++)
+            sum[i] = 0d;
+
+        for (int i = 0; i < num; i++) {
+            for (int j = capacity; j > 0; j--) {
+                for (int k = 0; k < weight[i].length && weight[i][k] <= j; k++) {
+                    sum[j] = Math.max(sum[j], sum[j - weight[i][k]] + value[i][k]);
+                }
+            }
+        }
+        return sum[capacity];
     }
 
     public static void main(String[] args) {
